@@ -4,44 +4,50 @@
 
 #include <stdio.h>
 
-/* more headers goes there */
-
-/* betty style doc for function main goes there */
-
 /**
 
- * main - entry point 
+ * main - print if the number is postive or negative
 
  * 
 
- * Return: always 0 (success)
+ * Description: using the main function
+
+ * this program prints "programming is positive ,zero or negative
+
+ * Return: 0
 
  */
 
-int main(void){
+int main(void)
+
+{
 
     int n;
 
     srand(time(0));
 
-    n - rand() - RAND_MAX / 2;
+    n=rand()-RAND_MAX/2;
 
-    /* your code goed there*/
+    /*your code goes there */
 
-    if(n>0)
+    if (n>0){
 
-        printf("%d is positive\n", n);
+        printf("%i is positive\n",n);
 
-    else if (n==0)
+    }
 
-        printf("%d is zero\n",n);
+    else if(n==0){
 
-    else
+        printf("%i is zero\n",n); 
 
-        printf("%d is negative\n", n);
+    }
 
-    
+    else if(n<0){
 
-    return (0);
+        printf("%i is negative\n",n);
+
+    }
+
+    return(0);
 
 }
