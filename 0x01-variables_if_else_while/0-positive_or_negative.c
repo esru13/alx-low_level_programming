@@ -1,64 +1,47 @@
-#include <stdib.h>
+#include <stdlib.h>
 
 #include <time.h>
 
 #include <stdio.h>
 
+/* more headers goes there */
 
+/* betty style doc for function main goes there */
 
 /**
 
- * main - print if the numbeer is positive , zero , or negative
+ * main - entry point 
 
  * 
 
- * Description: using the main function
-
- * this program prints "programming is positive , zero or negative "
-
- * Return: 0
+ * Return: always 0 (success)
 
  */
 
-int main(void)
-
-{
+int main(void){
 
     int n;
 
-
-
     srand(time(0));
 
-    n- rand () - RAND_MAX / 2;
+    n - rand() - RAND_MAX / 2;
 
-    /*your code goes there*/
+    /* your code goed there*/
 
-    if (n > 0)
+    if(n>0)
 
-    {
+        printf("%d is positive\n", n);
 
-        printf("%i is positive\n",n);
+    else if (n==0)
 
-    }
+        printf("%d is zero\n",n);
 
-    else if(n == 0)
+    else
 
-    {
+        printf("%d is negative\n", n);
 
-        printf("%i is zero\n",n);
-
-    }
-
-    elseif (n < 0)
-
-    {
-
-        printf("%i is negative\n",n);
-
-    }
+    
 
     return (0);
 
 }
-
