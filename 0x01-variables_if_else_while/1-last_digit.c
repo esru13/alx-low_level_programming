@@ -6,51 +6,47 @@
 
 /**
 
- * main - print if the number is postive or negative
+ * main - prints random number to variable
 
  * 
 
- * Description: using the main function
-
- * this program prints "programming is positive ,zero or negative
-
- * Return: 0
+ * Return: Always(sucess)
 
  */
 
-int main(void)
-
-{
+int main(void){
 
     int n;
 
-    int l;
+    char last[]="Last digit of";
 
     srand(time(0));
 
     n=rand()-RAND_MAX/2;
 
-    l=n%10;
+    printf("%s %d is %d and is",last,n,n%10);
 
-    if (l>5){
-
-        printf("Last digit of %d and is greater than 5/n",n,l);
-
-    }
-
-    else if(l==0){
-
-        printf("Last digit of %d is %d and is 0/n",n,l);
-
-
-
-    }
-
-    else
+    if(n % 10 > 5)
 
     {
 
-        printf("Last digit of %d is %d and is less than 6 and not 0/n",n,l);
+        printf("greater than 5\n");
+
+    }
+
+    else if(n % 10 == 0)
+
+    {
+
+        printf("0\n");
+
+
+
+    }
+
+    else{
+
+        printf("less than 6 and not 0/n");
 
     }
 
