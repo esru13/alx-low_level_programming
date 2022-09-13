@@ -8,7 +8,7 @@
 
  */
 
-int amin(void){
+int main(void){
 
     _putchar('_');
 
