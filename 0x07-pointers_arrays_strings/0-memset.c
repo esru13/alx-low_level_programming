@@ -1,24 +1,20 @@
-#include "main.h"  
+#ifndef MAIN_H
+#define MAIN_H
 
-/**   
- * _memset - Fills the first n bytes of the memory area   
- *          pointed to by @s with the constant byte @c. 
- * @s: A pointer to the memory area to be filled.
- * @c: The character to fill the memory area with.  
- * @n: The number of bytes to be filled.                                                                                             
+/**
+* void prototypes()
+* int prototypes()
+*/
 
- * description _memset: over there  
- *   
- * Return: A pointer to the filled memory area @s.   
- */        
+int _putchar(char);
+char *_memset(char *s, char b, unsigned int n);
+char *_memcpy(char *dest, char *src, unsigned int n);
+char *_strchr(char *s, char c);
+unsigned int _strspn(char *s, char *accept);
+char *_strpbrk(char *s, char *accept);
+char *_strstr(char *haystack, char *needle);
+void print_chessboard(char (*a)[8]);
+void print_diagsums(int *a, int size);
+void set_string(char **s, char *to);
 
-void *_memset(void *s, int c, size_t n)      
-{              
-        unsigned int index;          
-        unsigned char *memory = s, value = c;  
-
-        for (index = 0; index < n; index++) 
-                memory[index] = value;   
-
-        return (memory);      
-}
+#endif /*MAIN_H*/
