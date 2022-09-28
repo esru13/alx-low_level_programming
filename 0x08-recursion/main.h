@@ -1,20 +1,19 @@
-#include "main.h"
+#ifndef MAIN_H
+#define MAIN_H
 
-/**
- * wildcmp - compares two strings and returns 1 if identical
- * @s1: string to be checked
- * @s2: pattern to be used
- *
- * Return: 1 if identical, 0 otherwise
- */
+#include <stdio.h>
 
-int wildcmp(char *s1, char *s2)
-{
-	if (*s2 == '\0')
-		return (*s1 == '\0');
-	if (*s2 == *s1)
-		return (*s1 != '\0' && wildcmp(s1 + 1, s2 + 1));
-	if (*s2 == '*')
-		return (wildcmp(s1, s2 + 1) || (*s1 != '\0' && wildcmp(s1 + 1, s2)));
-	return (0);
-}
+int _putchar(char c);
+void _puts_recursion(char *s);
+void _print_rev_recursion(char *s);
+int _strlen_recursion(char *s);
+int factorial(int n);
+int _pow_recursion(int x, int y);
+int _sqrt_recursion(int n);
+int is_prime_number(int n);
+int _sqrt(int n, int x);
+int is_prime(int n,int start);
+void check(char *s, int start, int end, int *flag);
+int wildcmp(char *s1, char *s2);
+
+#endif /*MAIN_H*/
