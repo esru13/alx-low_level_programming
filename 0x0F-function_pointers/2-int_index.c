@@ -3,7 +3,6 @@
 /**
  * int_index - searches for an integer
  * @array: array to serch through
-
  * @size: size of array
  * @cmp: function used to compare
  *
