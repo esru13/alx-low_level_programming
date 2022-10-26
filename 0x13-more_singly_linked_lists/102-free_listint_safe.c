@@ -1,65 +1,54 @@
 #include "lists.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 /**
- * _ra - reallocates memory for an array of pointers
- * to the nodes in a linked list
- * @size: size of the new list (always one more than the old list)
- * @new: new node to add to the list
+ * print_listint_safe - prints a linked list, safely
+ * @head: list of type listint_t to print
  *
- * Return: pointer to the new list
+ * Return: number of nodes in the list
  */
-listint_t **_ra(listint_t **list, size_t size, listint_t *new)
+size_t print_listint_safe(const listint_t *head)
 {
-	listint_t **newlist;
-	size_t i;
+	size_t num = 0;
+	long int diff;
 
-	newlist = malloc(size * sizeof(listint_t *));
-	if (newlist == NULL)
+	while (head)
 	{
-		free(list);
-		exit(98);
+		diff = head - head->next;
+		num++;
+		printf("[%p] %d\n", (void *)head, head->n);
+		if (diff > 0)
+			head = head->next;
+		
+		else
+		{
+			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
+			break;
+		}
 	}
-
-	for (i = 0; i < size - 1; i++)
-		newlist[i] = list[i];
-	newlist[i] = new;
-	free(list);
-	return (newlist);
+	return (num);
 }
 
-/**
- * free_listint_safe - frees a listint_t linked list.
- * @head: double pointer to the start of the list
- *
- * Return: the number of nodes in the list
- */
-size_t free_listint_safe(listint_t **head)
-{
-	size_t i, num = 0;
-	listint_t **list = NULL;
-	listint_t *next;
 
-	if (head == NULL || *head == NULL)
-		return (num);
-	while (*head != NULL)
+#include "lists.h"
+
+/**
+ * print_listint_safe - print a list
+ * @head: linked list
+ *  Return: count of nodes
+ */
+size_t print_listint_safe(const listint_t *head)
+{
+	size_t count = 0;
+
+	while (head != NULL)
 	{
-		for (i = 0; i < num; i++)
+		printf("[%p] %d\n", (void *)head, head->n);
+		count++;
+		if ((head->next) >= head)
 		{
-			if (*head == list[i])
-			{
-				*head = NULL;
-				free(list);
-				return (num);
-			}
+			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
+			return (count);
 		}
-		num++;
-		list = _ra(list, num, *head);
-		next = (*head)->next;
-		free(*head);
-		*head = next;
-	}
-	free(list);
-	return (num);
+		head = head->next;
+	}return (count);
 }
