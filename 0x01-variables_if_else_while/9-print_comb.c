@@ -1,38 +1,23 @@
 #include <stdio.h>
 
 /**
-
- * main - print if the number from 0-9 with commas and space between them
-
- * Description: using the main function
-
- * this program prints "0,1,2,3,4,5,6,7,8,9"
-
- * Return: 0
-
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
+int main(void)
+{
+	int num;
 
-int main(void){
-
-    int c;
-
-    for( c=48 ; c<= 57; c++){
-
-        putchar(c);
-
-        if (c != 57){
-
-            putchar(',');
-
-            putchar(' ');
-
-        }
-
-    }
-
-    putchar('\n');
-
-    return(0);
-
+	for (num = '0'; num <= '9'; num++)
+	{
+		putchar(num);
+		if (num != '9')
+		{
+			putchar(',');
+			putchar(' ');
+		}
+	}
+	putchar('\n');
+	return (0);
 }
-
