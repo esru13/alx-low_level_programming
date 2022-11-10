@@ -1,41 +1,25 @@
 #include <stdio.h>
 
 /**
-
- * main - print if the number is  positive , zero or negative
-
- * 
-
- * Description: using the main function
-
- * this program prints "programming is positive , zero or negative"
-
- * 
-
- * Return: 0
-
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
-
-int main(void){
-
-    char ch;
-
-    for (ch = 'a'; ch <='z'; ch++)
-
+int main(void)
 {
+	int last_char = 122;
+	int alpha;
 
-        putchar(ch);
+	for (alpha = 97; alpha <= last_char; alpha++)
+	{
+		putchar(alpha);
 
-}
-
-    for (ch = 'A'; ch <= 'z' ;ch++){
-
-        putchar(ch);
-
-    }
-
-    putchar ('\n');
-
-    return (0);
-
+		if (alpha == 122)
+		{
+			alpha = 64;
+			last_char = 90;
+		}
+	}
+	printf("\n");
+	return (0);
 }
